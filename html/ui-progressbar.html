@@ -1,0 +1,31 @@
+
+<div class="row">
+        <div class="col-md-6">
+            <div ng-repeat="country in page.countries">
+                
+                <a uib-popover-template="'./html/ui-popover-currency.html'" 
+                    popover-title="Change Currency">{{country.Description}}
+                </a>
+
+                <tm1-ui-dbr-hidden
+                   tm1-instance="dev"
+                   tm1-cube="General Ledger"
+                   tm1-elements="LY %,2012,Year,local,{{country.key}},Corporate,Net Income,Amount"
+                   ng-model="country.value"
+                   >
+                </tm1-ui-dbr-hidden>
+                
+                <uib-progressbar 
+                    uib-tooltip="Email the Manager: {{country['Manager Email']}}" 
+                    value="country.value*100">
+                        <span style="color:white; white-space:nowrap;">{{country.value*100 | number:2}} %</span>
+                </uib-progressbar>
+                
+            </div>
+            
+    
+                
+
+    
+        </div>
+    </div>

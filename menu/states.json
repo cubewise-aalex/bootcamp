@@ -1,0 +1,6 @@
+{
+  "ui-bootstrap": {
+    "url": "/ui-bootstrap",
+    "templateUrl": "html/ui-bootstrap.html"
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "label": "ui-bootstrap",
+    "icon_class": "fa-file-text-o",
+    "data": {
+      "page": "ui-bootstrap"
+    },
+    "expanded": false
+  }
+]

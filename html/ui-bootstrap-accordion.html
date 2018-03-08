@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-6">
+
+            <div uib-alert ng-if="!attributes['Currency'] && !attributes['Manager Email']" ng-class="'alert-warning'">Please select an attribute.</div>
+            
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-model="attributes['Currency']" uib-btn-checkbox ng-init="attributes['Currency']=true">Currency</label>
+                <label class="btn btn-primary" ng-model="attributes['Manager Email']" uib-btn-checkbox>Manager Email</label>
+            </div>
+
+            
+            <uib-accordion close-others="oneAtATime">
+                    <div uib-accordion-group class="panel-default" 
+                        heading="{{country.Description}}"
+                        ng-repeat="country in page.countries">
+                            <form>
+                                <div class="form-group"
+                                    ng-if="attributes['Currency']">
+                                    <label for="attribute">Currency</label>
+                                    <tm1-ui-dbra
+                                       tm1-instance="dev"
+                                       tm1-dimension="Region"
+                                       tm1-element={{country.key}}
+                                       tm1-attribute="Currency">
+                                    </tm1-ui-dbra>
+                                </div>
+                                <div class="form-group"
+                                    ng-if="attributes['Manager Email']">
+                                    <label for="attribute">Manager Email</label>
+                                    <tm1-ui-dbra
+                                       tm1-instance="dev"
+                                       tm1-dimension="Region"
+                                       tm1-element={{country.key}}
+                                       tm1-attribute="Manager Email">
+                                    </tm1-ui-dbra>
+                                </div>
+                              </form>
+                    </div>
+            </uib-accordion>
+
+    </div>
+</div>
+

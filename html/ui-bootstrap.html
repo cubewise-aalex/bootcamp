@@ -1,0 +1,32 @@
+<div ng-controller="uibootstrapCtrl">
+
+	<tm1-ui-element-list
+		 tm1-instance="dev"
+		 tm1-dimension="Region"
+		 tm1-subset="All Countries"
+		 tm1-attributes="Description, Currency, Manager Email"
+		 tm1-calculate-top-level="false"
+		 ng-model="page.countries"
+		 >
+	</tm1-ui-element-list>
+
+  <h1>
+    <span style="float: left; width: 50px; "><i ng-if="$root.isLoading"  class="fa fa-cog fa-spin" ></i><i ng-if="!$root.isLoading" class="fa fa-file-text-o"></i></span> ui-bootstrap
+  </h1>
+  
+  <div class="row">
+  	<div class="col-md-12">  
+			<uib-tabset active="active">
+				<uib-tab index="0" heading="accordion, button, alert">
+					<div ng-include="'./html/ui-bootstrap-accordion.html'"></div>
+				</uib-tab>
+				<uib-tab index="1" heading="progressbar, tooltip, popover">
+					<div ng-include="'./html/ui-progressbar.html'"></div>
+				</uib-tab>
+		</uib-tabset>
+  	
+  	</div>
+  </div>
+    
+
+</div>
