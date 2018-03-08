@@ -1,4 +1,5 @@
 admin/**
+!assets/
 assets/**
 !assets/css/bootstrap/bootcamp/
 help/**
