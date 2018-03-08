@@ -1,5 +1,6 @@
 admin/**
 assets/**
+!assets/css/bootcamp/
 help/**
 html/samples/**
 js/controllers/samples/**
